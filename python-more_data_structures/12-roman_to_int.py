@@ -5,26 +5,13 @@ def roman_to_int(roman_string):
     result = 0
     subtractives = {"IV": 4, "IX": 9, "XL": 40, "XC": 90,
                     "CD": 400, "CM": 900}
+    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+              'C': 100, 'D': 500, 'M': 1000}
     while len(roman_string) > 0:
         if roman_string[0:2] in list(subtractives.keys()):
             result += subtractives[roman_string[0:2]]
             roman_string = roman_string[2:]
         else:
-            if roman_string[0:1] == 'I':
-                result += 1
-            elif roman_string[0:1] == 'V':
-                result += 5
-            elif roman_string[0:1] == 'X':
-                result += 10
-            elif roman_string[0:1] == 'L':
-                result += 50
-            elif roman_string[0:1] == 'C':
-                result += 100
-            elif roman_string[0:1] == 'D':
-                result += 500
-            elif roman_string[0:1] == 'M':
-                result += 1000
-            else:
-                print("Error")
+            result += values[roman_string[0:1]]
             roman_string = roman_string[1:]
-    return result
+    return result 
