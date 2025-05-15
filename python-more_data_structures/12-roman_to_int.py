@@ -3,7 +3,8 @@ def roman_to_int(roman_string):
     if roman_string is None or not isinstance(roman_string, str):
         return 0
     result = 0
-    subtractives = {"IV" : 4, "IX" : 9, "XL" : 40, "XC" : 90, "CD" : 400, "CM" : 900}
+    subtractives = {"IV":4, "IX":9, "XL":40, "XC":90,
+                    "CD":400, "CM":900}
     while len(roman_string) > 0:
         if roman_string[0:2] in list(subtractives.keys()):
             result += subtractives[roman_string[0:2]]
