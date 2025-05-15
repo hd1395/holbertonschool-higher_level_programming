@@ -14,4 +14,4 @@ def roman_to_int(roman_string):
         else:
             result += values[roman_string[0:1]]
             roman_string = roman_string[1:]
-    return result 
+    return result
