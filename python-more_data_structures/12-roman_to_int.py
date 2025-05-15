@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string is None or roman_string is not str:
+    if roman_string is None or not isinstance(roman_string, str):
         return 0
     result = 0
     subtractives = {"IV" : 4, "IX" : 9, "XL" : 40, "XC" : 90, "CD" : 400, "CM" : 900}
