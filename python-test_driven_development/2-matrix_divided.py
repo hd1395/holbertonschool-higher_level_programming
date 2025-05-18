@@ -40,7 +40,8 @@ def matrix_divided(matrix, div):
     for num in row:
       if not isinstance(num, (float, int)):
         raise TypeError(type_error_msg)
-   list_len = len(row)
+  list_len = len(row)
+   
     
     if not isinstance(div, (float, int)):
       raise TypeError("div must be a number")
