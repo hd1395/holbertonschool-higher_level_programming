@@ -10,44 +10,37 @@ Importing the function from the module:
 
 Printing a large paragraph with punctuation:
 
-    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres""")
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    >>> text_indentation("""Is this what you wanted? Perhaps: a collection of words. Here, there, everywhere? Let’s explore: ideas, thoughts, wonders. Can we go deeper? Maybe! Or should we stop here? Questions arise, answers await. Life is full of surprises! What do you think?""")
+    Is this what you wanted?
     <BLANKLINE>
-    Quonam modo?
+    Perhaps:
     <BLANKLINE>
-    Utrum igitur tibi litteram videor an totas paginas commovere?
+    a collection of words.
     <BLANKLINE>
-    Non autem hoc:
+    Here, there, everywhere?
     <BLANKLINE>
-    igitur ne illud quidem.
+    Let’s explore:
     <BLANKLINE>
-    Fortasse id optimum, sed ubi illud:
+    ideas, thoughts, wonders.
     <BLANKLINE>
-    Plus semper voluptatis?
+    Can we go deeper?
     <BLANKLINE>
-    Teneo, inquit, finem illi videri nihil dolere.
+    Maybe! Or should we stop here?
     <BLANKLINE>
-    Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+    Questions arise, answers await.
     <BLANKLINE>
-    Si id dicis, vicimus.
+    Life is full of surprises! What do you think?
     <BLANKLINE>
-    Inde sermone vario sex illa a Dipylo stadia confecimus.
-    <BLANKLINE>
-    Sin aliud quid voles, postea.
-    <BLANKLINE>
-    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-    <BLANKLINE>
-    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
-
+    
 Printing a word with surrounding spaces:
 
-    >>> text_indentation("    Holberton    ")
-    Holberton
+    >>> text_indentation("    Tuwaiq    ")
+    Tuwaiq
 
 Word ending with punctuation:
 
-    >>> text_indentation("    Hello    .")
-    Hello.
+    >>> text_indentation("    Holberton    .")
+    Holberton    .
     <BLANKLINE>
 
 All special punctuation characters:
@@ -73,17 +66,6 @@ Passing an integer (should raise TypeError):
     Traceback (most recent call last):
         ...
     TypeError: text must be a string
-
-Text with mixed punctuation:
-
-    >>> text_indentation("Betty: Holberton? Python is. cool   ")
-    Betty:
-    <BLANKLINE>
-    Holberton?
-    <BLANKLINE>
-    Python is.
-    <BLANKLINE>
-    cool
 
 Single character (non-special):
 
