@@ -8,9 +8,16 @@ Importing the function from the module:
 
     >>> print_square = __import__('4-print_square').print_square
 
-Print a square of size 5:
+Print a square of size 7:
 
-    >>> print_square(5)
+    >>> print_square(7)
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
 
 Print a square of size 0 (should print nothing):
 
