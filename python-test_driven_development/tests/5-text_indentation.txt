@@ -10,7 +10,7 @@ Importing the function from the module:
 
 Printing a large paragraph with punctuation:
 
-    >>> text_indentation(\"""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres\""")
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres""")
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <BLANKLINE>
     Quonam modo?
@@ -41,13 +41,88 @@ Printing a large paragraph with punctuation:
 
 Printing a word with surrounding spaces:
 
-    >>> text_indentation("    Tuwaiq    ")
-    Tuwaiq
+    >>> text_indentation("    Holberton    ")
+    Holberton
 
 Word ending with punctuation:
 
-    >>> text_indentation("    مرحبا    .")
-    مرحبا.
+    >>> text_indentation("    Hello    .")
+    Hello.
     <BLANKLINE>
 
-All special punctuation character
+All special punctuation characters:
+
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Passing `None` as input (should raise TypeError):
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing an integer (should raise TypeError):
+
+    >>> text_indentation(10)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Text with mixed punctuation:
+
+    >>> text_indentation("Betty: Holberton? Python is. cool   ")
+    Betty:
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    Python is.
+    <BLANKLINE>
+    cool
+
+Single character (non-special):
+
+    >>> text_indentation('2')
+    2
+
+Empty string with only spaces:
+
+    >>> text_indentation('    ')
+
+Single newline character:
+
+    >>> text_indentation('\\n')
+    <BLANKLINE>
+
+Newlines and special characters:
+
+    >>> text_indentation('\\n.\\n?\\n:')
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Spaces with one newline:
+
+    >>> text_indentation("   \\n")
+    <BLANKLINE>
+
+Spaces and newline (variant 2):
+
+    >>> text_indentation("   \\n   ")
+    <BLANKLINE>
+
+Newline followed by spaces:
+
+    >>> text_indentation("\\n   ")
+    <BLANKLINE>
