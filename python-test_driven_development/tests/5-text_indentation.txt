@@ -79,32 +79,29 @@ Empty string with only spaces:
 Single newline character:
 
     >>> text_indentation('\\n')
-    <BLANKLINE>
+    \n
 
 Newlines and special characters:
 
     >>> text_indentation('\\n.\\n?\\n:')
+    \n.
     <BLANKLINE>
-    .
+    \n?
     <BLANKLINE>
-    <BLANKLINE>
-    ?
-    <BLANKLINE>
-    <BLANKLINE>
-    :
+    \n:
     <BLANKLINE>
 
 Spaces with one newline:
 
     >>> text_indentation("   \\n")
-    <BLANKLINE>
+    \n
 
 Spaces and newline (variant 2):
 
     >>> text_indentation("   \\n   ")
-    <BLANKLINE>
+    \n
 
 Newline followed by spaces:
 
     >>> text_indentation("\\n   ")
-    <BLANKLINE>
+    \n
