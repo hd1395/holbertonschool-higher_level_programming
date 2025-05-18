@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module provides the function `say_my_name` that prints a formatted full name.
+This module provides the function `say_my_name`
+that prints a formatted full name.
 """
 
 
