@@ -6,7 +6,7 @@ This module provides a function to divide all elements of a matrix by a number.
 
 def matrix_divided(matrix, div):
     """
-    Divides all elements of a matrix by a number.
+      Divides all elements of a matrix by a number.
 
     Args:
     matrix (list of lists): A matrix (list of lists) of integers/floats.
@@ -21,26 +21,23 @@ def matrix_divided(matrix, div):
     TypeError: If div is not a number.
     ZeroDivisionError: If div is zero.
     """
-
-    list_len = 0
+    row_len = 0
     size_error_msg = "Each row of the matrix must have the same size"
     type_error_msg = "matrix must be a matrix (list of lists) of integers/floats"
-
     if not matrix or not isinstance(matrix, list):
         raise TypeError(type_error_msg)
 
     for row in matrix:
         if not row or not isinstance(row, list):
             raise TypeError(type_error_msg)
-        
-    if list_len != 0 and len(row) != list_len:
-        raise TypeError(size_error_msg)
+        if row_len != 0 and len(row) != row_len:
+            raise TypeError(size_error_msg)
+
+        for num in row:
+            if not isinstance(num, (float, int)):
+                raise TypeError(type_error_msg)
+        row_len = len(row)
     
-    for num in row:
-        if not isinstance(num, (float, int)):
-            raise TypeError(type_error_msg)
-    list_len = len(row)
-   
     if not isinstance(div, (float, int)):
         raise TypeError("div must be a number")
 
