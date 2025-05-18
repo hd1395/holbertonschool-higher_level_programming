@@ -44,5 +44,6 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    lst = list(map(lambda r: list(map(lambda n: round(n / div, 2), r)), matrix))
-    return (lst)
+    new_list = list(map(lambda r: list(map(lambda n: round(n / div, 2), r))
+    , matrix))
+    return (new_list)
