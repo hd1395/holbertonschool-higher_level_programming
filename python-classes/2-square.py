@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-This module defines a Square class with size validation.
+This module defines a Square class with attribute size validation.
 """
 
 
 class Square:
     """
-    Represents a square with a private size attribute.
+    Square class with a private size attribute.
 
     Attributes:
         __size (int): The size of the square (private).
