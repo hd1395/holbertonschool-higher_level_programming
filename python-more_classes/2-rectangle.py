@@ -5,9 +5,7 @@ Defines a Rectangle class.
 
 
 class Rectangle:
-    """
-Represent a rectangle.
-    """
+    """Rectangle class"""
 
     def __init__(self, width=0, height=0):
         """
@@ -19,14 +17,14 @@ Represent a rectangle.
     @property
     def width(self):
         """
-        Retrieves the width of the Rectangle
+        Gets the width of the Rectangle
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        Sets the width of the Rectangle
+        Sets and validates the width of the Rectangle
         Throws:
             TypeError: if width is not an integer
             ValueError: if width is less than 0
@@ -40,14 +38,14 @@ Represent a rectangle.
     @property
     def height(self):
         """
-        Retrieves the height of the Rectangle
+        Gets the height of the Rectangle
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        Sets the height of the Rectangle
+        Sets and validates the height of the Rectangle
         Throws:
             TypeError: if height is not an integer
             ValueError: if height is less than 0
