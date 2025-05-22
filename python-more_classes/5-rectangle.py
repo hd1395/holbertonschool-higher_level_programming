@@ -5,9 +5,7 @@ Defines a Rectangle class.
 
 
 class Rectangle:
-    """
-    Represent a rectangle
-    """
+    """ Rectangle class """
 
     def __init__(self, width=0, height=0):
         """
@@ -19,14 +17,14 @@ class Rectangle:
     @property
     def width(self):
         """
-        Retrieves the width of the Rectangle
+        Gets the width of the Rectangle
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        Sets the width of the Rectangle
+        Sets and validates the width of the Rectangle
         Throws:
             TypeError: if width is not an integer
             ValueError: if width is less than 0
@@ -40,14 +38,14 @@ class Rectangle:
     @property
     def height(self):
         """
-        Retrieves the height of the Rectangle
+        Gets the height of the Rectangle
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        Sets the height of the Rectangle
+        Sets and validates the height of the Rectangle
         Throws:
             TypeError: if height is not an integer
             ValueError: if height is less than 0
@@ -80,10 +78,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        rect_str = []
+        result_str = []
         for i in range(self.__height):
-            rect_str.append("#" * self.__width)
-        return "\n".join(rect_str)
+            result_str.append("#" * self.__width)
+        return "\n".join(result_str)
 
     def __repr__(self):
         """
@@ -93,6 +91,6 @@ class Rectangle:
 
     def __del__(self):
         """
-        Destructor to print a message when a Rectangle instance is deleted
+        Print a message when a Rectangle instance is deleted
         """
         print("Bye rectangle...")
