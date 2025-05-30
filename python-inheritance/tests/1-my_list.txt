@@ -64,8 +64,10 @@ Traceback (most recent call last):
 ...
 TypeError: 'float' object is not iterable
 
+>>> my_list = MyList()
+>>> my_list.append(1)
 >>> my_list.append('h')
 >>> my_list.print_sorted()
 Traceback (most recent call last):
 ...
-TypeError: unorderable types: str() < int()
+TypeError: '<' not supported between instances of 'int' and 'str'
