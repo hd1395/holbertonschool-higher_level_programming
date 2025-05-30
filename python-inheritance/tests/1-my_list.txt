@@ -44,7 +44,7 @@ Test cases:
 >>> my_list.append(0)
 
 >>> print(my_list)
-[5, -10,-50, 0]]
+[5, -10,-50, 0]
 
 >>> my_list.print_sorted()
 [-50, -10, 0, 5]
