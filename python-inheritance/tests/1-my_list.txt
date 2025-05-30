@@ -12,8 +12,9 @@ Test cases:
 
 >>> my_list = MyList('Hamad')
 >>> my_list.print_sorted()
-['d', 'a', 'm', 'a', 'H']
+['H', 'a', 'a', 'd', 'm']
 
+>>> my_list = MyList()
 
 >>> my_list.append(21)
 
