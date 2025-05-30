@@ -1,0 +1,70 @@
+Importing the class
+>>> MyList = __import__("1-my_list").MyList
+
+Test cases:
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList('H')
+>>> my_list.print_sorted()
+['H']
+
+>>> my_list = MyList('Hamad')
+>>> my_list.print_sorted()
+['d', 'a', 'm', 'a', 'H']
+
+
+>>> my_list.append(21)
+
+>>> my_list.append(3)
+
+>>> my_list.append(50)
+
+>>> my_list.append(9)
+
+>>> print(my_list)
+[21, 3, 50, 9]
+
+>>> my_list.print_sorted()
+[3, 9, 21, 50]
+
+>>> print(my_list)
+[21, 3, 50, 9]
+
+>>> my_list = MyList()
+
+>>> my_list.append(5)
+
+>>> my_list.append(-10)
+
+>>> my_list.append(-50)
+
+>>> my_list.append(0)
+
+>>> print(my_list)
+[5, -10,-50, 0]]
+
+>>> my_list.print_sorted()
+[-50, -10, 0, 5]
+
+>>> my_list = MyList(3.5)
+Traceback (most recent call last):
+...
+TypeError: 'float' object is not iterable
+
+>>> my_list = MyList(float('inf'))
+Traceback (most recent call last):
+...
+TypeError: 'float' object is not iterable
+
+>>> my_list = MyList(float('nan'))
+Traceback (most recent call last):
+...
+TypeError: 'float' object is not iterable
+
+>>> my_list.append('h')
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: unorderable types: str() < int()
