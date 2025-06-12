@@ -18,8 +18,7 @@ def get_all_usernames():
     """
     Handles the "/data" endpoint and returns a JSON list of all usernames.
     """
-    usernames = list(users.keys())
-    return jsonify({"usernames": usernames})
+    return jsonify(list(users.keys()))
 
 @app.route("/status")
 def get_status():
