@@ -36,6 +36,12 @@ class MyWebServer(http.server.BaseHTTPRequestHandler):
             response_data = {"version": "1.0", "description": "A simple API built with http.server"}
             self.wfile.write(bytes(json.dumps(response_data), "utf-8"))
 
+        elif self.path == "/status":
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(bytes("OK", "utf-8"))
+
         else:
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
