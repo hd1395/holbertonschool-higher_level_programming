@@ -43,7 +43,7 @@ def fetch_and_save_posts():
             with open(csv_file_name, 'w', newline='', encoding='utf-8') as csv_file:
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 writer.writeheader()
-                writer.writerows(structured_posts)
+                writer.writerows(posts_list)
 
     except requests.exceptions.RequestException as e:
         print(f"An error occurred during the request for saving posts: {e}")
