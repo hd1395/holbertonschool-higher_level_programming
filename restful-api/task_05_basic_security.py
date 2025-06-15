@@ -23,35 +23,35 @@ def unauthorized_response(callback):
     """
     Callback for when a JWT is required but not found or invalid.
     """
-    return jsonify({"message": "Missing Authorization Header or invalid token"}), 401
+    return jsonify({"error": "Missing Authorization Header or invalid token"}), 401
 
 @jwt.invalid_token_loader
 def invalid_token_response(callback):
     """
     Callback for when a JWT is malformed.
     """
-    return jsonify({"message": "Signature verification failed: Token is invalid"}), 401
+    return jsonify({"error": "Signature verification failed: Token is invalid"}), 401
 
 @jwt.expired_token_loader
 def expired_token_response(callback):
     """
     Callback for when a JWT has expired.
     """
-    return jsonify({"message": "Token has expired"}), 401
+    return jsonify({"error": "Token has expired"}), 401
 
 @jwt.revoked_token_loader
 def revoked_token_response(callback):
     """
     Callback for when a JWT has been revoked.
     """
-    return jsonify({"message": "Token has been revoked"}), 401
+    return jsonify({"error": "Token has been revoked"}), 401
 
 @jwt.needs_fresh_token_loader
 def needs_fresh_token_response(callback):
     """
     Callback for when a refresh token is needed but not provided.
     """
-    return jsonify({"message": "Fresh token required"}), 401
+    return jsonify({"error": "Fresh token required"}), 401
 
 # --- Basic Authentication Callback ---
 @auth.verify_password
@@ -148,7 +148,7 @@ def login():
     user = users.get(username)
 
     if not user or not check_password_hash(user["password"], password):
-        return jsonify({"message": "Bad username or password"}), 401
+        return jsonify({"error": "Bad username or password"}), 401
 
     access_token = create_access_token(identity=username, additional_claims={"role": user["role"]})
     return jsonify(access_token=access_token)
@@ -174,8 +174,7 @@ def admin_only_route():
 
     if claims.get("role") == "admin":
         return "Admin Access: Granted"
-    else:
-        return jsonify({"error": "Admin access required"}), 403
+    return jsonify({"error": "Admin access required"}), 403
 
 if __name__ == "__main__":
     app.run()
