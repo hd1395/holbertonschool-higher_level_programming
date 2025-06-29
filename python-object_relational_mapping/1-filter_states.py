@@ -10,12 +10,19 @@ import sys
 import MySQLdb
 
 
-def get_filtered_states(username, password, db_name):
+def get_filtered_states(username, password, dbname):
+    """
+    Connects to MySQL database and prints all states starts with "N" sorted by id.
+
+    Args:
+        username (str): MySQL username
+        password (str): MySQL password
+        dbname (str): database name
+    """
 
     # Connect to MySQL
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=username, passwd=password,
-                         db=db_name, charset="utf8")
+    db = MySQLdb.connect(
+        host="localhost", port=3306, user=username, passwd=password, db=dbname)
 
     cursor = db.cursor()
 
