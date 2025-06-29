@@ -5,7 +5,7 @@ import MySQLdb
 from sys import argv
 
 def list_state(username, password, dbname):
-  """
+    """
     Connects to MySQL database and prints all states sorted by id.
 
     Args:
@@ -14,12 +14,11 @@ def list_state(username, password, dbname):
         dbname: database name
     """
     db = MySQLdb.connect(
-      host="localhost",
-      port=3306,
-      user=username,
-      passwd=password,
-      db=dbname
-    )
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=dbname)
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
     rows = cursor.fetchall()
