@@ -12,7 +12,8 @@ import MySQLdb
 
 def get_filtered_states(username, password, dbname):
     """
-    Connects to MySQL database and prints all states starts with "N" sorted by id.
+    Connects to MySQL database and prints all states starts
+    with "N" sorted by id.
 
     Args:
         username (str): MySQL username
