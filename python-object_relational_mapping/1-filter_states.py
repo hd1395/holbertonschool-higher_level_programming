@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-"""
-Lists all states with a name starting with 'N' from the given MySQL database.
+"""script that lists all states with a name starting with N (upper N) from
+the database hbtn_0e_0_usa"""
 
-Takes 3 arguments: mysql username, mysql password, and database name.
-Connects to MySQL on localhost:3306 using MySQLdb.
-Displays results sorted by states.id in ascending order.
-"""
 import MySQLdb
 from sys import argv
 
