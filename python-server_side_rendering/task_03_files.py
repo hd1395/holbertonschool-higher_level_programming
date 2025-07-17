@@ -78,7 +78,7 @@ def display_products():
         filtered_products = [p for p in products if p['id'] == product_id]
         if not filtered_products:
             return render_template('product_display.html',
-                                   error=f"Product with ID {product_id} not found.")
+                                   error="Product not found")
         products = filtered_products
     
     return render_template('product_display.html', products=products, source=source)
