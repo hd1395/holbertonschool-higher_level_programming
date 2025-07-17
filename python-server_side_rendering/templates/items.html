@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}Items List - My Flask App{% endblock
+%} {% block content %}
+<h1>Our Items</h1>
+
+{% if items %}
+<p>Here are the items we currently have available:</p>
+<ul>
+  {% for item in items %}
+  <li>
+    {{ item }} {% if loop.first %}
+    <span>(First item!)</span>
+    {% elif loop.last %}
+    <span>(Last item!)</span>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+<p>Total items: {{ items|length }}</p>
+{% else %}
+<div class="alert">
+  <p>No items found in our inventory.</p>
+  <p>Please check back later!</p>
+</div>
+{% endif %}
+
+<div class="actions">
+  <a href="/" class="button">Back to Home</a>
+</div>
+{% endblock %}
