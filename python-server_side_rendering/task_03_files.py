@@ -61,13 +61,12 @@ def display_products():
     product_id = request.args.get('id', type=int)
     
     # Read data based on source
+    if source not in ['json', 'csv']:
+        return render_template('product_display.html', error="Wrong source")
     if source == 'json':
         products = read_json_products()
     elif source == 'csv':
         products = read_csv_products()
-    else:
-        return render_template('product_display.html', 
-                               error="Invalid source parameter. Use 'json' or 'csv'.")
     
     # Handle file reading errors
     if products is None:

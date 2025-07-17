@@ -4,9 +4,7 @@ endblock %} {% block content %}
 <p>Data Source: {{ source|upper if source else 'Not specified' }}</p>
 
 {% if error %}
-<div class="alert alert-danger"><strong>Error:</strong> {{ error }}</div>
-<a href="/products?source=json" class="btn btn-primary">View JSON Products</a>
-<a href="/products?source=csv" class="btn btn-primary">View CSV Products</a>
+<div><strong>Error:</strong> {{ error }}</div>
 {% else %}
 <table class="product-table">
   <thead>
