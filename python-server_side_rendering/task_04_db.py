@@ -76,7 +76,7 @@ def display_products():
     product_id = request.args.get('id', type=int)
     
     # Read data based on source
-    if source not in ['json', 'csv']:
+    if source not in ['json', 'csv', 'sql']:
         return render_template('product_display.html', error="Wrong source")
     if source == 'json':
         products = read_json_products()
